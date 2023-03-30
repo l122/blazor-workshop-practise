@@ -10,6 +10,9 @@ builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.
 builder.Services.AddScoped<OrderState>();
 
 // Add auth services
-builder.Services.AddApiAuthorization();
+// Add auth services
+builder.Services.AddApiAuthorization<PizzaAuthenticationState>(options => {
+    options.AuthenticationPaths.LogOutSucceededPath = "";
+});
 
 await builder.Build().RunAsync();

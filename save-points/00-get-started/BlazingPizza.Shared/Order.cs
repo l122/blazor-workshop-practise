@@ -21,6 +21,7 @@ public class Order
     public string GetFormattedTotalPrice() => GetTotalPrice().ToString("0.00");
 }
 
+[JsonSerializable(typeof(Dictionary<string, string>))]
 [JsonSourceGenerationOptions(GenerationMode = JsonSourceGenerationMode.Default, PropertyNamingPolicy = JsonKnownNamingPolicy.CamelCase)]
 [JsonSerializable(typeof(Order))]
 [JsonSerializable(typeof(OrderWithStatus))]
